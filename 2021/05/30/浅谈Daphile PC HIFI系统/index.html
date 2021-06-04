@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="前言（大神可跳过全文）首先这是官网：Daphile 老实说我很不喜欢HIFI这个词，不过因为Daphile标志旁边有HIFI这四个字母所以还是写上比较好。当然，网上确实吹得好厉害啊，甚至看见有人说装上这个就如同给PCHIFI系统更换了一台万元级别解码器。 这也只是国内吹的，国外论坛的话倒很少见吹这个的，但不管怎么样这是一个免费LINUX系统（开不开源没了解过，但在github查了一下好像没有什么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈Daphile PC HIFI系统">
+<meta property="og:url" content="http://example.com/2021/05/30/%E6%B5%85%E8%B0%88Daphile%20PC%20HIFI%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="「懿寯·彦訸」">
+<meta property="og:description" content="前言（大神可跳过全文）首先这是官网：Daphile 老实说我很不喜欢HIFI这个词，不过因为Daphile标志旁边有HIFI这四个字母所以还是写上比较好。当然，网上确实吹得好厉害啊，甚至看见有人说装上这个就如同给PCHIFI系统更换了一台万元级别解码器。 这也只是国内吹的，国外论坛的话倒很少见吹这个的，但不管怎么样这是一个免费LINUX系统（开不开源没了解过，但在github查了一下好像没有什么">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://link.jscdn.cn/sharepoint/aHR0cHM6Ly9zdHVqbHV6aGVkdWNuLW15LnNoYXJlcG9pbnQuY29tLzppOi9nL3BlcnNvbmFsL2FhMTIyNTk0NzE1Nl9zdHVfamx1emhfZWR1X2NuL0VWeVhTUEQza21SS21Ia05ONzZZbGk4QkZXVG9kZjl5NzZOUEJEcVdxMW5BOVE_ZT1NTkVhWnI.png">
+<meta property="article:published_time" content="2021-05-30T06:05:19.000Z">
+<meta property="article:modified_time" content="2021-05-31T06:35:41.876Z">
+<meta property="article:author" content="懿寯·彦訸">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://link.jscdn.cn/sharepoint/aHR0cHM6Ly9zdHVqbHV6aGVkdWNuLW15LnNoYXJlcG9pbnQuY29tLzppOi9nL3BlcnNvbmFsL2FhMTIyNTk0NzE1Nl9zdHVfamx1emhfZWR1X2NuL0VWeVhTUEQza21SS21Ia05ONzZZbGk4QkZXVG9kZjl5NzZOUEJEcVdxMW5BOVE_ZT1NTkVhWnI.png">
+
+<link rel="canonical" href="http://example.com/2021/05/30/%E6%B5%85%E8%B0%88Daphile%20PC%20HIFI%E7%B3%BB%E7%BB%9F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>浅谈Daphile PC HIFI系统 | 「懿寯·彦訸」</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">「懿寯·彦訸」</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-deaf">
+
+    <a href="/categories/deaf/" rel="section"><i class="fa fa-deaf fa-fw"></i>聋子</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/categories/music/" rel="section"><i class="fa fa-music fa-fw"></i>音乐</a>
+
+  </li>
+        <li class="menu-item menu-item-book">
+
+    <a href="/categories/book/" rel="section"><i class="fa fa-book fa-fw"></i>随笔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/30/%E6%B5%85%E8%B0%88Daphile%20PC%20HIFI%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gochiusa.com/core_sys/images/contents/00000503/base/sn_001.jpg?1621933997">
+      <meta itemprop="name" content="懿寯·彦訸">
+      <meta itemprop="description" content="能发现这里的贵样是不幸的，作为魔鬼彦訸府上的这里，是只有卡布奇诺的正义方被允许之地。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="「懿寯·彦訸」">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浅谈Daphile PC HIFI系统
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-30 14:05:19" itemprop="dateCreated datePublished" datetime="2021-05-30T14:05:19+08:00">2021-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-31 14:35:41" itemprop="dateModified" datetime="2021-05-31T14:35:41+08:00">2021-05-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/deaf/" itemprop="url" rel="index"><span itemprop="name">deaf</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="https://link.jscdn.cn/sharepoint/aHR0cHM6Ly9zdHVqbHV6aGVkdWNuLW15LnNoYXJlcG9pbnQuY29tLzppOi9nL3BlcnNvbmFsL2FhMTIyNTk0NzE1Nl9zdHVfamx1emhfZWR1X2NuL0VWeVhTUEQza21SS21Ia05ONzZZbGk4QkZXVG9kZjl5NzZOUEJEcVdxMW5BOVE_ZT1NTkVhWnI.png"></p>
+<h2 id="前言（大神可跳过全文）"><a href="#前言（大神可跳过全文）" class="headerlink" title="前言（大神可跳过全文）"></a>前言（大神可跳过全文）</h2><p>首先这是官网：<a target="_blank" rel="noopener" href="https://daphile.com/" title="Daphile">Daphile</a></p>
+<p>老实说我很不喜欢HIFI这个词，不过因为Daphile标志旁边有HIFI这四个字母所以还是写上比较好。当然，网上确实吹得好厉害啊，甚至看见有人说装上这个就如同给PCHIFI系统更换了一台万元级别解码器。</p>
+<p>这也只是国内吹的，国外论坛的话倒很少见吹这个的，但不管怎么样这是一个免费LINUX系统（开不开源没了解过，但在github查了一下好像没有什么项目），所以不管实际效果怎么样，给予尊重就可以了。</p>
+<p>下面着重讲讲怎么安装。</p>
+<span id="more"></span>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>前提：我弄的是WIN10跟Daphile（以下称为达菲）的双系统，但实际上你电脑就是放在那吃灰不用的话，只装个达菲也无所谓。达菲基本只要是X86架构的机器都能装上去，内存留个最低2G就可以了，其他没什么所谓。当然机器能连WIFI是最好的，没有的话买个，插上电脑能连WIFI的东西。</p>
+<p>大神的话可以直接看官网文档也就是这个</p>
+<p><a target="_blank" rel="noopener" href="https://daphile.com/download/DaphileInstallation.pdf" title="达菲安装文档">达菲安装文档（英文）</a>  <a target="_blank" rel="noopener" href="https://daphile.com/download/FAQ.txt" title="常见问题">常见问题（英文）</a></p>
+<p>我自己是在WIN下进行，LINUX的话我不太熟。</p>
+<p>首先先去官网下一个最新的镜像，你处理器是多少位的就装多少位的。</p>
+<p>然后是刻录，按道理来说刻录到U盘其实就能运行的了，软件的话软碟通？或者说来个更白痴的balenaEtcher。</p>
+<p>这是官网：<a target="_blank" rel="noopener" href="https://www.balena.io/etcher/" title="balenaEtcher">balenaEtcher</a></p>
+<p>当然这东西比一般的刻录软件要大得多，不过好处就是无脑，所以应该不用多教了。</p>
+<p>刻录完之后呢，关电脑，像你平常刷Android X86还是其他各种各样的系统一样，先进blos之类的总之就是把USB启动移上第一位。（blos界面这个，电脑这么多种我也不知道你家电脑是怎么进的啊，自己找下度娘吧）</p>
+<p>设置完，保存完设置重启之后就进入到达菲的初始界面，不管怎么说先按下F1，然后选语言，自己懂哪门就选哪门，啥都不懂就一开始系统预选的回车进去。</p>
+<p>第一项是WIFI，把你手机热点或者WIFI名（我建议是手机热点），一字不差地打上去就可以了。</p>
+<p>第二项是问你是否显示WIFI密码，随意。</p>
+<p>第三项是WIFI密码，别写错就行。</p>
+<p>第四项好像是要设置IP之类的东西，想折腾少一点的话就选“N”，而且我也没试过选“Y”，</p>
+<p>最后问你是否保存设置那当然是“Y”</p>
+<p>后面可以全跳过，然后屏幕读完条会出现一行IP地址，如果没有的话说明之前WIFI名、密码那些可能有输错之类的。输错的情况下是不会有IP地址出来的，而且就算重启之后也有可能会无法再去设置。我后面会细讲这个怎么解决。</p>
+<p>然后打开你的，连接了上述那个WIFI或者热点的除达菲外的设备，就是你的手机平板之类的。在浏览器输入那个IP地址，一般都进得去，如果进不去那可能卡bugs了或者WIFI设置本身有问题（把WIFI出厂设置一下也许可以，但之后设置的密码要与之前相同），手机热点一般不会这样。</p>
+<p>进去之后，那就说明已经可以用你的手机操纵了。（概率性显示media serve出问题，那就按照屏幕显示的重启一下这个serve，当然有可能还是不行，那就勾上边上那个东西再重启一下试试）。</p>
+<p>我很不建议就这样结束的，因为似乎读取不了你电脑硬盘上的歌曲只能再插个U盘之类的才能播歌，如果电脑没有内置WIFI就占用了三个USB口，而且你发现就算你电脑（win）装了Linux File Systems for Windows这样的东西，你也是访问不了你的U盘，最可怕的是DiskGenius上直接显示你U盘没有分配分区。</p>
+<p>所以，在你电脑的某个硬盘上或给另一个移动存储设备割出两个分区（建议是EXT4），然后一个命名为”DaphileData”，另一个命名为”DaphileBoot”，其中两个分区建议都要1G以上，DaphileData建议拿来装歌，所以可以调大点。</p>
+<p>进回方才U盘装的达菲系统，Settings——System Firmware——New Installation，选好刚好分好区所在的硬盘或者移动存储设备，INSTALL（注意你的硬盘分区表类型还有系统引导程序类型，不过一般而言不用多管）。</p>
+<p>如果你刚刚所装的达菲跟电脑原先的系统不在一个硬盘，那么把那个硬盘启动优先级调到最高就可以启动达菲了。</p>
+<p>不过我建议先看看是不是已经装上了，这个看看新建的那两个分区里面有没有东西就可以了。</p>
+<p>如果是在一个硬盘上的话就要考虑多系统引导的问题。</p>
+<h2 id="Daphile多系统引导"><a href="#Daphile多系统引导" class="headerlink" title="Daphile多系统引导"></a>Daphile多系统引导</h2><p>其实标题是有问题的，因为下面跟达菲没啥关系，我使用的是rEFind这个工具。</p>
+<p>这个相当无脑不用担心。（如果不想加什么装饰）</p>
+<p>先给个官网<a target="_blank" rel="noopener" href="https://www.rodsbooks.com/refind/" title="rEFInd">rEFInd</a></p>
+<p>很庆幸的是作者似乎还没有停更了。（如果停更了别打我啊）</p>
+<p>找到下面的Getting rEFInd点进去，然后A binary zip file（大神随意），解压下完之后的那东西，然后直接点开里面的refind的文件夹。</p>
+<p>注意你处理器是啥架构就搬哪个进你的ESP分区（UEFI），没有的话那个也太老了吧，，，我没有这样的机器。</p>
+<p>在EFI分区里建立一个rEFind文件夹（可以在DiskGenius里操作，其实文件夹名可以随意），跟Microsoft文件夹（如果是WIN的话）同一个目录。</p>
+<p>所以就搬对应架构的drivers与tools文件夹、refind_   .efi、icons文件夹进ESP分区里刚刚建好的文件夹里。</p>
+<p>再新建一个空文件（直接新建一个TXT），命名为renfind.conf，里面不写任何东西也无关系，扔进刚刚那个文件夹里。</p>
+<p>基本完事（注意以上操作可能要给ESP分区分配盘符）</p>
+<p>去<a target="_blank" rel="noopener" href="https://www.easyuefi.com/index-us.html" title="EasyUEFI">EasyUEFI官网</a>下个试用版，土豪随意。</p>
+<p>装完后打开软件，管理EFI启动项，就算里面有个refind类似的东西也删掉它，别删掉你win本身还有USB的就行了，然后点中间第二个创建新项，类型选LINUX或其他操作系统，描述随意，选中ESP分区，浏览文件，选中刚刚放进去的那个refind_   .efi文件，确定，再确定，把刚刚新建的移到最高，完事，重启电脑。</p>
+<h2 id="管理歌曲"><a href="#管理歌曲" class="headerlink" title="管理歌曲"></a>管理歌曲</h2><p>我前面说过建议把歌曲放进DaphileData分区，具体的目录是user/music里面，当然歌曲在其他地方的话，要在其他硬盘里。</p>
+<p>手机上是有软件可以管理达菲的，叫Squeezer，谷歌商店有，不行就看论坛介绍下个就行了。打开APP后把屏幕上显示的IP地址输进去就可以了，如果一开始没设置其他项的话。</p>
+<p>问题在于WIN怎么访问DaphileData这个EXT4分区，找个叫EXTFS的软件，破解版的话好像过了试用期还是可以用，但只有1M/S左右往EXT4分区写入文件（试用期间或转正后满速读写，破解版试用期之后仍然可以读写但1M/S写入）。所以我干脆转正了，花了120RMB。</p>
+<h2 id="无法控制Daphile，通过直接管理DaphileData分区变相出厂设置系统"><a href="#无法控制Daphile，通过直接管理DaphileData分区变相出厂设置系统" class="headerlink" title="无法控制Daphile，通过直接管理DaphileData分区变相出厂设置系统"></a>无法控制Daphile，通过直接管理DaphileData分区变相出厂设置系统</h2><p>如果歌曲是放在DaphileData分区里面但系统又没有提供IP地址的话，重装达菲会格式化分区会把歌曲也删掉。总之就是你无法通过手机平板之类的操纵达菲系统时，要出厂系统可以通过以下办法。</p>
+<p>删掉DaphileData里面除user/music所有的东西，然后重启电脑启动达菲发现就是初始界面了。</p>
+<p>当然你可以直接先备份了分区里面的歌曲然后重装系统也无干系。只是这样的话不用备份而已。</p>
+<h2 id="个人体验"><a href="#个人体验" class="headerlink" title="个人体验"></a>个人体验</h2><p>其实系统里面该怎么设置上面完全没讲，这个的话自己摸索一下，毕竟这东西见仁见智。</p>
+<p>我的话比较好奇达菲在我最高采样率只有48KHZ的Surface pro 3板载声卡上会不会有所提升。</p>
+<p>不过好奇怪啊，完美位元模式下，还是可以播放高于48KHZ的歌曲什么的，当然也不为难这板载了，还是播普通44.1KHZ采样率的歌曲为主。</p>
+<p>我个人感觉声音的话比WIN FB2K柔顺些，特别是背景，不知道是不是心理因素影响感觉特别黑。我用的依旧是那破塞子N6P，但自我感觉这种提升也许是利用好了CPU本身的软解码性能么，还是说LINUX内核时钟能跟PCM时钟扯上关系，这种着实不太懂，毕竟看起来LINUX内核的作用挺大的。</p>
+<p>当然声音不是说突然换了个系统就清晰了什么的。只是单纯感觉没那么生硬，稍微密度提上了的感觉，不过有个问题就是好像偶尔有点闷，不知道是不是我声卡太烂了。</p>
+<p>如果说能有哪位大神讲一下跟WIN FB2K WASAPI输出在深层上的区别，我觉得起码可以解开一些问题。</p>
+<p>不排除以上是脑放，感兴趣自己装个玩玩。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>说实话这东西我觉得不适合拿来接耳机耳塞这种，我觉得适合拿去接音箱音响，因为想起来屏幕不用就放在那显示个IP地址什么的挺浪费的，反正这东西不用钱，玩玩也不算亏就是了。</p>
+<p>传统艺能，最后放首信仰曲目：<br>（播完此歌曲将消耗53.3MB流量）</p>
+
+        <div id="aplayer-MNFrsSlO" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+			  <script>
+				  var options = {"narrow":false,"autoplay":false,"showlrc":0,"mode":"random","mutex":true,"theme":"#e6d0b2","preload":"none","listmaxheight":"513px","music":[{"title":"革命のヴァンガード","author":"かなでももこ","url":"https://link.jscdn.cn/sharepoint/aHR0cHM6Ly9zdHVqbHV6aGVkdWNuLW15LnNoYXJlcG9pbnQuY29tLzp1Oi9nL3BlcnNvbmFsL2FhMTIyNTk0NzE1Nl9zdHVfamx1emhfZWR1X2NuL0VWdTQzMHdERnJ0QnJuWlFvWEVqS1FjQmR2WVY2aExCTV9xMF9lQVY1RGJPUVE_ZT1wVzZYbzk.wav","pic":"https://p1-e6eeae93.imageflux.jp/momokokanadegoods/ba4766fbed9a16721a82.jpeg"}]};
+				  options.element = document.getElementById("aplayer-MNFrsSlO");
+				  var ap = new APlayer(options);
+			    window.aplayers || (window.aplayers = []);
+				  window.aplayers.push(ap);
+			  </script>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/29/%E6%B5%85%E8%B0%88%E5%8D%83%E5%85%83%E6%A1%A3%E7%9A%84%E4%BE%BF%E6%90%BA%E8%A7%A3%E7%A0%81%E8%80%B3%E6%94%BE%E4%B9%90%E4%B9%8B%E9%82%A6MU3X/" rel="prev" title="浅谈千元档的便携解码耳放乐之邦MU3X">
+      <i class="fa fa-chevron-left"></i> 浅谈千元档的便携解码耳放乐之邦MU3X
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/31/%E9%9F%B3%E4%B9%90%E6%9D%BF%E5%9D%97%E6%AC%A2%E8%BF%8E%E8%BE%9E/" rel="next" title="欢迎辞">
+      欢迎辞 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80%EF%BC%88%E5%A4%A7%E7%A5%9E%E5%8F%AF%E8%B7%B3%E8%BF%87%E5%85%A8%E6%96%87%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">前言（大神可跳过全文）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Daphile%E5%A4%9A%E7%B3%BB%E7%BB%9F%E5%BC%95%E5%AF%BC"><span class="nav-number">3.</span> <span class="nav-text">Daphile多系统引导</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E6%AD%8C%E6%9B%B2"><span class="nav-number">4.</span> <span class="nav-text">管理歌曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E6%B3%95%E6%8E%A7%E5%88%B6Daphile%EF%BC%8C%E9%80%9A%E8%BF%87%E7%9B%B4%E6%8E%A5%E7%AE%A1%E7%90%86DaphileData%E5%88%86%E5%8C%BA%E5%8F%98%E7%9B%B8%E5%87%BA%E5%8E%82%E8%AE%BE%E7%BD%AE%E7%B3%BB%E7%BB%9F"><span class="nav-number">5.</span> <span class="nav-text">无法控制Daphile，通过直接管理DaphileData分区变相出厂设置系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E4%BD%93%E9%AA%8C"><span class="nav-number">6.</span> <span class="nav-text">个人体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="懿寯·彦訸"
+      src="https://gochiusa.com/core_sys/images/contents/00000503/base/sn_001.jpg?1621933997">
+  <p class="site-author-name" itemprop="name">懿寯·彦訸</p>
+  <div class="site-description" itemprop="description">能发现这里的贵样是不幸的，作为魔鬼彦訸府上的这里，是只有卡布奇诺的正义方被允许之地。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021-06 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">懿寯·彦訸</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

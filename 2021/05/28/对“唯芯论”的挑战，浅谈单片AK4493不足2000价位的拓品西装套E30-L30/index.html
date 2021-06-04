@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="前言首先这套的话，在谈听感之前当然少不了ASR跟狼叔的测评。 ASR 拓品E30评测    ASR 拓品L30评测     狼叔 拓品L30评测 可谓指标方面，无论是解码的E30还是耳放L30都是目前较为上流的水平，特别是L30，甚至在底噪这一项，底噪小到运用至测量仪器的极限都无法准确测出，得要经过底噪放大后才能经过换算估算出底噪。 指标方面不用担心，拓品家的西装套这项向来挺强的，当然买都买了，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对“唯芯论”的挑战，浅谈单片AK4493不足2000价位的拓品西装套E30+L30">
+<meta property="og:url" content="http://example.com/2021/05/28/%E5%AF%B9%E2%80%9C%E5%94%AF%E8%8A%AF%E8%AE%BA%E2%80%9D%E7%9A%84%E6%8C%91%E6%88%98%EF%BC%8C%E6%B5%85%E8%B0%88%E5%8D%95%E7%89%87AK4493%E4%B8%8D%E8%B6%B32000%E4%BB%B7%E4%BD%8D%E7%9A%84%E6%8B%93%E5%93%81%E8%A5%BF%E8%A3%85%E5%A5%97E30-L30/index.html">
+<meta property="og:site_name" content="「懿寯·彦訸」">
+<meta property="og:description" content="前言首先这套的话，在谈听感之前当然少不了ASR跟狼叔的测评。 ASR 拓品E30评测    ASR 拓品L30评测     狼叔 拓品L30评测 可谓指标方面，无论是解码的E30还是耳放L30都是目前较为上流的水平，特别是L30，甚至在底噪这一项，底噪小到运用至测量仪器的极限都无法准确测出，得要经过底噪放大后才能经过换算估算出底噪。 指标方面不用担心，拓品家的西装套这项向来挺强的，当然买都买了，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://link.jscdn.cn/sharepoint/aHR0cHM6Ly9zdHVqbHV6aGVkdWNuLW15LnNoYXJlcG9pbnQuY29tLzppOi9nL3BlcnNvbmFsL2FhMTIyNTk0NzE1Nl9zdHVfamx1emhfZWR1X2NuL0VlSGdkbS1kam5kUHR1ZEd1aU5ieDFRQmh4bkwtLVVCVG44YjV3V0cyWl9kWXc_ZT1wckZYMm8.jpg">
+<meta property="article:published_time" content="2021-05-28T06:33:11.000Z">
+<meta property="article:modified_time" content="2021-05-31T06:31:12.638Z">
+<meta property="article:author" content="懿寯·彦訸">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://link.jscdn.cn/sharepoint/aHR0cHM6Ly9zdHVqbHV6aGVkdWNuLW15LnNoYXJlcG9pbnQuY29tLzppOi9nL3BlcnNvbmFsL2FhMTIyNTk0NzE1Nl9zdHVfamx1emhfZWR1X2NuL0VlSGdkbS1kam5kUHR1ZEd1aU5ieDFRQmh4bkwtLVVCVG44YjV3V0cyWl9kWXc_ZT1wckZYMm8.jpg">
+
+<link rel="canonical" href="http://example.com/2021/05/28/%E5%AF%B9%E2%80%9C%E5%94%AF%E8%8A%AF%E8%AE%BA%E2%80%9D%E7%9A%84%E6%8C%91%E6%88%98%EF%BC%8C%E6%B5%85%E8%B0%88%E5%8D%95%E7%89%87AK4493%E4%B8%8D%E8%B6%B32000%E4%BB%B7%E4%BD%8D%E7%9A%84%E6%8B%93%E5%93%81%E8%A5%BF%E8%A3%85%E5%A5%97E30-L30/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>对“唯芯论”的挑战，浅谈单片AK4493不足2000价位的拓品西装套E30+L30 | 「懿寯·彦訸」</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">「懿寯·彦訸」</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-deaf">
+
+    <a href="/categories/deaf/" rel="section"><i class="fa fa-deaf fa-fw"></i>聋子</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/categories/music/" rel="section"><i class="fa fa-music fa-fw"></i>音乐</a>
+
+  </li>
+        <li class="menu-item menu-item-book">
+
+    <a href="/categories/book/" rel="section"><i class="fa fa-book fa-fw"></i>随笔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/28/%E5%AF%B9%E2%80%9C%E5%94%AF%E8%8A%AF%E8%AE%BA%E2%80%9D%E7%9A%84%E6%8C%91%E6%88%98%EF%BC%8C%E6%B5%85%E8%B0%88%E5%8D%95%E7%89%87AK4493%E4%B8%8D%E8%B6%B32000%E4%BB%B7%E4%BD%8D%E7%9A%84%E6%8B%93%E5%93%81%E8%A5%BF%E8%A3%85%E5%A5%97E30-L30/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://gochiusa.com/core_sys/images/contents/00000503/base/sn_001.jpg?1621933997">
+      <meta itemprop="name" content="懿寯·彦訸">
+      <meta itemprop="description" content="能发现这里的贵样是不幸的，作为魔鬼彦訸府上的这里，是只有卡布奇诺的正义方被允许之地。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="「懿寯·彦訸」">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          对“唯芯论”的挑战，浅谈单片AK4493不足2000价位的拓品西装套E30+L30
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-28 14:33:11" itemprop="dateCreated datePublished" datetime="2021-05-28T14:33:11+08:00">2021-05-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-05-31 14:31:12" itemprop="dateModified" datetime="2021-05-31T14:31:12+08:00">2021-05-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/deaf/" itemprop="url" rel="index"><span itemprop="name">deaf</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="https://link.jscdn.cn/sharepoint/aHR0cHM6Ly9zdHVqbHV6aGVkdWNuLW15LnNoYXJlcG9pbnQuY29tLzppOi9nL3BlcnNvbmFsL2FhMTIyNTk0NzE1Nl9zdHVfamx1emhfZWR1X2NuL0VlSGdkbS1kam5kUHR1ZEd1aU5ieDFRQmh4bkwtLVVCVG44YjV3V0cyWl9kWXc_ZT1wckZYMm8.jpg"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首先这套的话，在谈听感之前当然少不了ASR跟狼叔的测评。</p>
+<p><a target="_blank" rel="noopener" href="https://www.audiosciencereview.com/forum/index.php?threads/topping-e30-dac-review.12119/" title="ASR 拓品E30评测">ASR 拓品E30评测</a>    <a target="_blank" rel="noopener" href="https://www.audiosciencereview.com/forum/index.php?threads/topping-l30-headphone-amplifier-review.15226/" title="ASR 拓品L30评测">ASR 拓品L30评测</a>     <a target="_blank" rel="noopener" href="https://www.l7audiolab.com/f/measurement-of-topping-l30-headphone-amp/" title="狼叔 拓品L30评测">狼叔 拓品L30评测</a></p>
+<p>可谓指标方面，无论是解码的E30还是耳放L30都是目前较为上流的水平，特别是L30，甚至在底噪这一项，底噪小到运用至测量仪器的极限都无法准确测出，得要经过底噪放大后才能经过换算估算出底噪。</p>
+<p>指标方面不用担心，拓品家的西装套这项向来挺强的，当然买都买了，只谈指标是无意义的，毕竟我们不是用眼睛听音乐嘛，那么接下来上听感。</p>
+<p>彦訸听过的设备其实很少，能拿得出来的耳机其实也只有小作坊的SEE AUDIO N6 PRO ，其实之前还有山灵ME200了，当然那个的话，现在都吃灰很久了，看看后面能不能拿出来拿这套听听看吧。</p>
+<span id="more"></span>
+<h2 id="设备组合"><a href="#设备组合" class="headerlink" title="设备组合"></a>设备组合</h2><p>那么先总结一下音频设备是怎样</p>
+<p>WIN10 FB2K WASAPI USB OUTPUT + 拓品E30 DAC模式 + 拓品L30 + SEE AUDIO N6 PRO（以下简称N6P）</p>
+<p>关于WIN10 FB2K WASAPI，之前考虑过要不要上Daphile系统写这篇浅谈，但想了想，因为Daphile的受众还是算少，所以打算把关于Daphile系统的文章单独出来写。</p>
+<h2 id="关于配件"><a href="#关于配件" class="headerlink" title="关于配件"></a>关于配件</h2><p>除了连接N6P的耳机线是SEVEN AUDIO的700多的纯铜线（这家的耳机线没有命名）之外，其他都是官配的配件。</p>
+<h2 id="听感"><a href="#听感" class="headerlink" title="听感"></a>听感</h2><p>其实说实话这是彦訸第一次上台，而且N6P是纯动铁的低阻高敏塞子，应该上台的话，好像显得有点夸张了。</p>
+<p>不过没关系，玩嘛，当然L30没有平衡输出，所以只能上单端的听感。</p>
+<p>我一如既往地开始第一首测试曲目。</p>
+<ul>
+<li>Kalafina「満天」</li>
+</ul>
+<p>开声的感觉很柔顺，声音密度也很高。当然上台的话声音的饱和几乎是必然的。</p>
+<p>但声音没有惊艳的感觉。可以理解成是一抹淡茶，只剩下N6P本身的味道，如同这套台机是泡茶用的白开水一般，没有添加任何音染。</p>
+<p>这可能是我听过最没味道的「满天」，虽然声音没有任何问题，但却不令人满足。</p>
+<ul>
+<li>ASCA「雲雀」</li>
+</ul>
+<p>这首主要是看中间高频那部分刺不刺耳，但很庆幸的是这套下N6P并没有出现这种情况，可以说声音依旧柔顺到底，这倒是令我挺满意的。</p>
+<ul>
+<li>riya「木漏れ日」</li>
+</ul>
+<p>其实说来惭悔，这么好听的一首歌我竟然没有找到好音源，找到的里面的高频都破掉了，所以这首拿来看看设备对于音源优劣的敏感性。</p>
+<p>我可以确信的是，中间夹杂的频段很高的乐器依旧破掉了，而且是很”明朗”地表现出破掉了。我感觉这套设备虽然让单片AK4493在指标上能跟双ES9038PRO的SMSL D1不相上下，但果然会放大音源缺陷。虽然这并不代表有问题，但体验上确实有所折扣。</p>
+<ul>
+<li>鈴木 雅之「十三夜」「純愛」「恋人」「路(交差点)」</li>
+</ul>
+<p>下面是老年男声上的表现，用铃木雅之的四首歌曲作为代表。</p>
+<p>依旧可以确信的是，任何方面都没有任何问题。</p>
+<p>但真的没有味道啊啊啊！！！！！</p>
+<p>没有那种老歌手沧桑感，也没有多少感情，平铺直叙地唱完一首情歌，我感觉也许不太适合用来听上世纪港乐，当然也许跟我的塞子本身有关。</p>
+<ul>
+<li>梶浦由記「Mother Land Nostalgia(花子とアンより)」</li>
+</ul>
+<p>怎么上面都是人声呢，那么下面来一首纯音乐。</p>
+<p>得益于柔顺的声音的表现，在Mother Land Nostalgia下这种乡村风的纯音乐非常合适，给人一种很舒服的感觉，甚至有点催人入睡的感觉。对于此我是非常满意的。</p>
+<ul>
+<li>諫山実生「プレイス・オブ・ピリオド」</li>
+</ul>
+<p>諫山実生的歌我可能也只有这首了，这也许是諫山実生唯一一首带有HI-RES标识的歌曲。<br>这首下因为諫山実生轻描淡写的风格，使得与我这套设备非常相称，直接给我的感觉就是对味了。后面得找多点这位歌手的歌，着实有点喜欢。</p>
+<ul>
+<li>UNISON SQUARE GARDEN「Phantom Joke」</li>
+</ul>
+<p>前面听到差不多睡着了，那就来点刺激的FGO绝对魔兽战线的OP，还是不够带感啊这个，，，</p>
+<p>也许是我脑放没有开满么。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>我个人认为，虽然多少受我塞子本身的风格的影响。我感觉这套西装也许非常适合听那种比较平淡的歌曲。声音是很饱和，但却缺乏厚度，导致一些浑厚的男声缺乏味道。</p>
+<p>但如果说用于辨别音源优劣，我认为这确实是很不错的选择。</p>
+<ul>
+<li>かなでももこ「革命のヴァンガード」</li>
+</ul>
+<p>最后彦訸真正的信仰，かなでももこ的革命のヴァンガード结尾吧。<br>（播完此歌曲将消耗53.3MB流量）</p>
+
+        <div id="aplayer-nGRKwsTx" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;"></div>
+			  <script>
+				  var options = {"narrow":false,"autoplay":false,"showlrc":0,"mode":"random","mutex":true,"theme":"#e6d0b2","preload":"none","listmaxheight":"513px","music":[{"title":"革命のヴァンガード","author":"かなでももこ","url":"https://link.jscdn.cn/sharepoint/aHR0cHM6Ly9zdHVqbHV6aGVkdWNuLW15LnNoYXJlcG9pbnQuY29tLzp1Oi9nL3BlcnNvbmFsL2FhMTIyNTk0NzE1Nl9zdHVfamx1emhfZWR1X2NuL0VWdTQzMHdERnJ0QnJuWlFvWEVqS1FjQmR2WVY2aExCTV9xMF9lQVY1RGJPUVE_ZT1wVzZYbzk.wav","pic":"https://p1-e6eeae93.imageflux.jp/momokokanadegoods/ba4766fbed9a16721a82.jpeg"}]};
+				  options.element = document.getElementById("aplayer-nGRKwsTx");
+				  var ap = new APlayer(options);
+			    window.aplayers || (window.aplayers = []);
+				  window.aplayers.push(ap);
+			  </script>
+
+
+
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/27/%E8%81%8B%E5%AD%90%E6%9D%BF%E5%9D%97%E6%AC%A2%E8%BF%8E%E8%BE%9E/" rel="prev" title="欢迎辞">
+      <i class="fa fa-chevron-left"></i> 欢迎辞
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/29/%E6%B5%85%E8%B0%88%E5%8D%83%E5%85%83%E6%A1%A3%E7%9A%84%E4%BE%BF%E6%90%BA%E8%A7%A3%E7%A0%81%E8%80%B3%E6%94%BE%E4%B9%90%E4%B9%8B%E9%82%A6MU3X/" rel="next" title="浅谈千元档的便携解码耳放乐之邦MU3X">
+      浅谈千元档的便携解码耳放乐之邦MU3X <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E5%A4%87%E7%BB%84%E5%90%88"><span class="nav-number">2.</span> <span class="nav-text">设备组合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E9%85%8D%E4%BB%B6"><span class="nav-number">3.</span> <span class="nav-text">关于配件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%AC%E6%84%9F"><span class="nav-number">4.</span> <span class="nav-text">听感</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">5.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="懿寯·彦訸"
+      src="https://gochiusa.com/core_sys/images/contents/00000503/base/sn_001.jpg?1621933997">
+  <p class="site-author-name" itemprop="name">懿寯·彦訸</p>
+  <div class="site-description" itemprop="description">能发现这里的贵样是不幸的，作为魔鬼彦訸府上的这里，是只有卡布奇诺的正义方被允许之地。</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2021-06 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">懿寯·彦訸</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
